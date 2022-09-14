@@ -3,8 +3,10 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser"
 const cors = require("cors");
+const bodyParser = require("body-parser");
 
 app.use(cors());
+app.use(bodyParser());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
