@@ -48,6 +48,6 @@ app.get("/", (req, res) => {
 // });
 
 app.listen(port, () => {
-  // connect();
+  connect();
   console.log(`A szerver fut: http://localhost:${port}`);
 });
