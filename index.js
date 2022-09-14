@@ -12,24 +12,22 @@ import commentRoutes from "./routes/comments.js";
 const app = express();
 const port = process.env.PORT || 5555;
 
-// dotenv.config();
+dotenv.config();
 
-console.log("van");
+const connect = () => {
+  mongoose
+    .connect(process.env.MONGO)
+    .then(() => {
+      console.log("Sikeres csatlakozás az adatbázishoz");
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
 
-app.get("/",(req,res) => {
-  res.send("siker")
+app.get("/", (req, res) => {
+  res.send("siker");
 })
-
-// const connect = () => {
-//   mongoose
-//     .connect(process.env.MONGO)
-//     .then(() => {
-//       console.log("Sikeres csatlakozás az adatbázishoz");
-//     })
-//     .catch((err) => {
-//       throw err;
-//     });
-// };
 
 // app.use(cookieParser());
 // app.use(express.json());
