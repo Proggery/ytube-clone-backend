@@ -12,7 +12,9 @@ import commentRoutes from "./routes/comments.js";
 const app = express();
 const port = process.env.PORT || 5555;
 
-dotenv.config();
+// dotenv.config();
+
+console.log("van");
 
 app.get("/",(req,res) => {
   res.send("siker")
@@ -48,6 +50,6 @@ app.get("/",(req,res) => {
 // });
 
 app.listen(port, () => {
-  connect();
+  // connect();
   console.log(`A szerver fut: http://localhost:${port}`);
 });
