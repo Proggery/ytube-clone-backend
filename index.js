@@ -1,13 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import cookieParser from "cookie-parser"
+import cookieParser from "cookie-parser";
 
-const cors = require("cors");
+import cors from require("cors");
 // const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5555;
-
 
 app.use(cors());
 // app.use(bodyParser());
@@ -19,8 +18,20 @@ import userRoutes from "./routes/users.js";
 import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
 
-
 dotenv.config();
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested, Content-Type, Accept Authorization"
+  );
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Methods", "POST, PUT, PATCH, GET, DELETE");
+    return res.status(200).json({});
+  }
+  next();
+});
 
 const connect = () => {
   mongoose
@@ -43,7 +54,7 @@ app.use("/api/comments", commentRoutes);
 
 app.get("/", (req, res) => {
   res.send("siker még még");
-})
+});
 
 app.use((err, req, res, next) => {
   const status = err.status || 500;
