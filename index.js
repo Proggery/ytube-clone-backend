@@ -4,13 +4,10 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-// const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5555;
 
 app.use(cors());
-// app.use(bodyParser());
-// app.use(express.urlencoded({ extended: true }));
 
 // Routes
 import authRoutes from "./routes/auth.js";
