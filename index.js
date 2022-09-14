@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser"
 
-// const cors = require("cors");
+const cors = require("cors");
 // const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5555;
 
 
-// app.use(cors());
+app.use(cors());
 // app.use(bodyParser());
 // app.use(express.urlencoded({ extended: true }));
 
