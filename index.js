@@ -25,17 +25,17 @@ const connect = () => {
     });
 };
 
+app.use(cookieParser());
+app.use(express.json());
+
+app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/videos", videoRoutes);
+app.use("/api/comments", commentRoutes);
+
 app.get("/", (req, res) => {
-  res.send("siker");
+  res.send("siker még");
 })
-
-// app.use(cookieParser());
-// app.use(express.json());
-
-// app.use("/api/auth", authRoutes);
-// app.use("/api/users", userRoutes);
-// app.use("/api/videos", videoRoutes);
-// app.use("/api/comments", commentRoutes);
 
 // app.use((err, req, res, next) => {
 //   const status = err.status || 500;
