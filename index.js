@@ -34,18 +34,18 @@ app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
 
 app.get("/", (req, res) => {
-  res.send("siker még");
+  res.send("siker még még");
 })
 
-// app.use((err, req, res, next) => {
-//   const status = err.status || 500;
-//   const message = err.message || "Hiba!";
-//   return res.status(status).json({
-//     success: false,
-//     status,
-//     message,
-//   });
-// });
+app.use((err, req, res, next) => {
+  const status = err.status || 500;
+  const message = err.message || "Hiba!";
+  return res.status(status).json({
+    success: false,
+    status,
+    message,
+  });
+});
 
 app.listen(port, () => {
   connect();
