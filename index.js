@@ -5,9 +5,9 @@ import cookieParser from "cookie-parser"
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-app.use(cors());
+// app.use(cors());
 // app.use(bodyParser());
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.urlencoded({ extended: true }));
 
 // Routes
 import authRoutes from "./routes/auth.js";
