@@ -10,7 +10,7 @@ import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
 
 const app = express();
-const port = 5555;
+const port = process.env.PORT || 5555;
 
 dotenv.config();
 
