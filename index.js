@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
-import cors from require("cors");
+import cors from "cors";
 // const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5555;
