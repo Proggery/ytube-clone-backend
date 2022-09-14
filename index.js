@@ -2,8 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser"
-const cors = require("cors");
-const bodyParser = require("body-parser");
+
+// const cors = require("cors");
+// const bodyParser = require("body-parser");
+const app = express();
+const port = process.env.PORT || 5555;
+
 
 // app.use(cors());
 // app.use(bodyParser());
@@ -15,8 +19,6 @@ import userRoutes from "./routes/users.js";
 import videoRoutes from "./routes/videos.js";
 import commentRoutes from "./routes/comments.js";
 
-const app = express();
-const port = process.env.PORT || 5555;
 
 dotenv.config();
 
