@@ -43,10 +43,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.get("/",(req,res) => {
-  res.send("sikeres csatlakozás")
-})
-
 app.listen(port, () => {
   connect();
   console.log(`A szerver fut: http://localhost:${port}`);
