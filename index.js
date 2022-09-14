@@ -39,9 +39,9 @@ app.use("/api/users", userRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
 
-// app.get("/", (req, res) => {
-//   res.send("siker még még");
-// })
+app.get("/", (req, res) => {
+  res.send("siker még még");
+})
 
 app.use((err, req, res, next) => {
   const status = err.status || 500;
